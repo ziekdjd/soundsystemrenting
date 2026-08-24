@@ -1,0 +1,116 @@
+.fa {
+    padding: 0.5rem;
+    font-size: 10px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+.container {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+.ico {
+    display: flex;
+}
+/* Tooltip */
+.text {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px black;
+}
+
+.text .texthover {
+    transition: 250ms;
+    opacity: 0%;
+    width: auto;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+}
+
+.text:hover .texthover {
+    transition: 250ms;
+    opacity: 100%;
+}
+
+/* Box */
+.box i {
+    transition: 500ms;
+    margin: 5px;
+    padding: 5px;
+    /* border: currentColor solid 5px; */
+    width: 60px;
+    height: 50px;
+    text-align: center;
+    font-size: 50px;
+    position: inherit;
+}
+
+.box i:hover {
+    transition: 250ms;
+    /* border: currentColor solid 5px; */
+    box-shadow: 0 0 15px white;
+}
+
+.yt i {
+    background-color: white;
+    border-radius: 15px;
+    color: gray;
+}
+.yt i:hover {
+    background-color: white;
+    color: red;
+    box-shadow: 0 0 15px red;
+}
+
+.fb i {
+    border-radius: 20px;
+    background: white;
+    color: black;
+}
+.fb i:hover {
+    background-color: white;
+    color: blue;
+    box-shadow: 0 0 15px blue;
+}
+
+
+
+.ig i {
+    background: radial-gradient(circle at 30% 107%, #ffffff 0%, #a8a8a8 5%, #6b6b6b 45%, #636363 60%, #000000 90%);
+    border-radius: 20px;
+    transition: 250ms;
+}
+.ig i:hover {
+    transition: 250ms;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    color: white;
+    box-shadow: 0 0 15px pink;
+}
+
+.tt i {
+    background-color: black;
+}
+
+.fa-tiktok {
+    border-radius: 10px;
+    color: #fff;
+    font-size: 30em;
+    text-shadow: 2px 2px black,
+                 -2px -2px grey;
+}
+
+.fa-tiktok:hover {
+    color: #fff;
+    text-shadow: 3px 3px #ff3353fc,
+                 -3px -3px cyan;
+}
