@@ -1,0 +1,46 @@
+/* Mobile-First Approach */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Navigation */
+nav {
+  width: 100%;
+  padding: 1rem;
+}
+
+/* Main Content */
+main {
+  padding: 1rem;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Grid/Flex for mobile */
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Media Queries for larger screens */
+@media (min-width: 768px) {
+  body {
+    font-size: 18px;
+  }
+  
+  .container {
+    flex-direction: row;
+  }
+}
