@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership Application - Sound System Renting</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 900px;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Form Header */
+        .form-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #2a2a2a;
+        }
+
+        .header-title h1 {
+            color: #00e5ff;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .header-title p {
+            color: #888;
+            font-size: 13px;
+            margin-top: 4px;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #00e5ff;
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        /* Section Banner */
+        .section-banner {
+            background: #252525;
+            color: #ffffff;
+            padding: 10px 18px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-left: 4px solid #00e5ff;
+            margin: 25px 0 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section-banner::after {
+            content: '';
+            width: 20px;
+            height: 100%;
+            background-color: #00e5ff;
+            opacity: 0.2;
+        }
+
+        /* Grid Layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px 30px;
+        }
+
+        .form-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .form-row label {
+            font-size: 13px;
+            font-weight: 500;
+            color: #bbb;
+            white-space: nowrap;
+            min-width: 130px;
+        }
+
+        /* Inputs */
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"] {
+            width: 100%;
+            padding: 10px 12px;
+            background: #121212;
+            border: 1px solid #333;
+            border-radius: 6px;
+            color: #fff;
+            font-size: 13px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        input[type="date"]:focus {
+            border-color: #00e5ff;
+        }
+
+        /* Specific Input Adjustments */
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            filter: invert(1);
+            cursor: pointer;
+        }
+
+        /* Radio Group Layout */
+        .radio-group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            font-size: 13px;
+            color: #bbb;
+        }
+
+        .radio-group label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            min-width: auto;
+        }
+
+        input[type="radio"] {
+            accent-color: #00e5ff;
+            cursor: pointer;
+        }
+
+        .inline-input {
+            width: 100px !important;
+            padding: 6px 10px !important;
+        }
+
+        /* Options Blocks */
+        .options-block {
+            margin-bottom: 20px;
+        }
+
+        .options-block > label {
+            display: block;
+            font-size: 13px;
+            color: #bbb;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        /* Signature Section */
+        .signature-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .signature-box-container label {
+            display: block;
+            font-size: 13px;
+            color: #bbb;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .signature-pad {
+            width: 100%;
+            height: 90px;
+            background: #121212;
+            border: 1px dashed #444;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+            font-size: 12px;
+        }
+
+        .declaration-text {
+            font-size: 12px;
+            color: #888;
+            line-height: 1.6;
+        }
+
+        /* Submit Button & Footer Navigation */
+        .form-actions {
+            margin-top: 35px;
+            text-align: center;
+        }
+
+        .btn-submit {
+            width: 100%;
+            max-width: 300px;
+            padding: 12px;
+            background: #00e5ff;
+            border: none;
+            border-radius: 6px;
+            color: #121212;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            transition: opacity 0.2s, transform 0.1s;
+        }
+
+        .btn-submit:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .auth-footer {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #888;
+        }
+
+        .auth-footer a {
+            color: #00e5ff;
+            text-decoration: none;
+        }
+
+        .auth-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            .form-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 6px;
+            }
+            .form-row label {
+                min-width: auto;
+            }
+            .signature-grid {
+                grid-template-columns: 1fr;
+            }
+            .form-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <!-- Header -->
+        <div class="form-header">
+            <div class="header-title">
+                <h1>Membership Application Form</h1>
+                <p>Sound System Renting • Event & Audio Solutions</p>
+            </div>
+            <div class="header-logo">
+                <i class="fa-solid fa-sliders"></i>
+                <span>ZiekDJD</span>
+            </div>
+        </div>
+
+        <form action="#" method="POST">
+            
+            <!-- PERSONAL INFORMATION -->
+            <div class="section-banner">Personal Information</div>
+            <div class="grid-2">
+                <div class="form-row">
+                    <label>Full Name:</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-row">
+                    <label>Address:</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-row">
+                    <label>Date of Birth:</label>
+                    <input type="date" required>
+                </div>
+                <div class="form-row">
+                    <label>Email Address:</label>
+                    <input type="email" required>
+                </div>
+                <div class="form-row">
+                    <label>Gender Identity:</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="gender" value="Male"> Male</label>
+                        <label><input type="radio" name="gender" value="Female"> Female</label>
+                        <label><input type="radio" name="gender" value="Other"> Other:</label>
+                        <input type="text" class="inline-input">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <label>Phone Number:</label>
+                    <input type="tel" required>
+                </div>
+            </div>
+
+            <!-- MEMBERSHIP DETAILS -->
+            <div class="section-banner">Membership Details</div>
+            
+            <div class="options-block">
+                <label>Membership Options for Individuals and Groups:</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="membership_type" value="Individual"> Individual Membership</label>
+                    <label><input type="radio" name="membership_type" value="Group"> Group Membership</label>
+                    <label><input type="radio" name="membership_type" value="Student"> Student Membership</label>
+                    <label><input type="radio" name="membership_type" value="Associate"> Associate Membership</label>
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div class="form-row">
+                    <label>Membership ID:</label>
+                    <input type="text" placeholder="Username">
+                </div>
+                <div class="form-row">
+                    <label>Emergency Contact Name:</label>
+                    <input type="text" placeholder="Contact Name">
+                </div>
+                <div class="form-row">
+                    <label>Membership Start Date:</label>
+                    <input type="date">
+                </div>
+                <div class="form-row">
+                    <label>Emergency Contact Phone:</label>
+                    <input type="tel" placeholder="Contact Phone">
+                </div>
+            </div>
+
+            <div class="options-block" style="margin-top: 20px;">
+                <label>Form of Payment for Membership Fee:</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="payment_method" value="Cash"> Cash</label>
+                    <label><input type="radio" name="payment_method" value="Check"> Check (Payable to ZiekDJD Sound System)</label>
+                    <label><input type="radio" name="payment_method" value="Card"> Debit / Credit</label>
+                </div>
+            </div>
+
+            <!-- SIGNATURE -->
+            <div class="section-banner">Signature</div>
+            <div class="signature-grid">
+                <div class="signature-box-container">
+                    <label>Signature of Member:</label>
+                    <div class="signature-pad">
+                        <span>Sign Here / Input Name</span>
+                    </div>
+                </div>
+                <div class="declaration-text">
+                    I hereby declare that the information provided in this form is accurate and complete to the best of my knowledge.
+                </div>
+            </div>
+
+            <!-- SUBMIT & FOOTER -->
+            <div class="form-actions">
+                <button type="submit" class="btn-submit">Submit Application</button>
+                <div class="auth-footer">
+                    <p>Already registered? <a href="login.html">Sign in here</a></p>
+                    <p style="margin-top: 8px;"><a href="https://ziekdjd.github.io/soundsystemrenting">&larr; Back to Home Page</a></p>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+</body>
+</html>

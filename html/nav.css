@@ -3,19 +3,28 @@ nav {
     padding: 1rem;
     position: sticky;
     top: 0;
+    display: flex;
+    justify-content: space-between; /* Pushes the two divs to opposite ends */
+    align-items: center; /* Vertically centers the links */
+}
+
+/* Adjust margins so the ends align nicely with the page */
+.nav-main a:first-child {
+    margin-left: 1.5rem;
+}
+
+.nav-auth a:last-child {
+    margin-right: 1.5rem;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    margin: 0 1.5rem;
+    margin: 0 1rem; /* Slightly reduced margin for better spacing */
     transition: color 0.3s;
+    font-weight: 500;
 }
 
 nav a:hover {
-    color: #667eea;
-}
-
-header p{
-    font-size: smaller;
+    color: #00e5ff; /* Changed from #667eea to match your new cyan/blue theme */
 }

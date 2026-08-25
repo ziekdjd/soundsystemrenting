@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Sound System Renting</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .auth-box {
+            width: 100%;
+            max-width: 360px;
+            padding: 30px;
+            background: #1a1a1a;
+            border-radius: 12px;
+            border: 1px solid #333;
+        }
+
+        .auth-box h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .auth-box p {
+            font-size: 13px;
+            color: #888;
+            margin-bottom: 24px;
+        }
+
+        .input-group {
+            margin-bottom: 16px;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 12px;
+            color: #aaa;
+            margin-bottom: 6px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            background: #121212;
+            border: 1px solid #333;
+            border-radius: 6px;
+            color: #fff;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .input-group input:focus {
+            border-color: #00e5ff;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            background: #00e5ff;
+            border: none;
+            border-radius: 6px;
+            color: #121212;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: opacity 0.2s;
+        }
+
+        .btn-submit:hover {
+            opacity: 0.9;
+        }
+
+        .auth-footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #888;
+        }
+
+        .auth-footer a {
+            color: #00e5ff;
+            text-decoration: none;
+        }
+
+        .auth-footer a:hover {
+            text-decoration: underline;
+        }
+
+        .back-home {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="auth-box">
+        <h2>Client Login</h2>
+        <p>Sign in to access your sound system rentals</p>
+
+        <form action="#" method="POST">
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" placeholder="name@example.com" required>
+            </div>
+
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" placeholder="••••••••" required>
+            </div>
+
+            <button type="submit" class="btn-submit">Sign In</button>
+        </form>
+
+        <div class="auth-footer">
+            <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+            <p class="back-home"><a href="https://ziekdjd.github.io/soundsystemrenting">&larr; Back to Home</a></p>
+        </div>
+    </div>
+
+</body>
+</html>
